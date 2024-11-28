@@ -65,6 +65,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+STATIC_URL = 'static/'
+
+
 ROOT_URLCONF = 'hahaton.urls'
 
 TEMPLATES = [
