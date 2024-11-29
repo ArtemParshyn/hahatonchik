@@ -1,13 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     {% load static %}
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link href="{%static 'css/index.css'%}" rel="stylesheet">
-</head>
-<body>
-<p>hakaton</p>
-
-</body>
+    <meta charset="UTF-8" />
+    <link href="{%static 'css/style.css'%}" rel="stylesheet" />
+    <title>МТС - Главная</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar" id="sidebar">
+        <button class="close-button" onclick="toggleSidebar()">✖</button>
+        <ul>
+          <li><a href="#home">Главная</a></li>
+          <li><a href="#services">Поиск сотрудников</a></li>
+          <li><a href="#about">О нас</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="main-content">
+        <header>
+          <button class="menu-button" onclick="toggleSidebar()">☰</button>
+          <h1>Добро пожаловать в МТС</h1>
+        </header>
+        <div class="icon">
+          <div>
+            <img
+              class="logo"
+              src="{% static 'images/mts-logo.svg' %}"
+              alt="Логотип"
+            />
+          </div>
+          <section style="opacity: 1">
+            <p>
+              МТС - это ваш надежный партнёр в мире технологий и связи. Мы
+              предоставляем широкий спектр услуг для каждого клиента.
+            </p>
+          </section>
+        </div>
+      </div>
+    </div>
+    <script>
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("active");
+      }
+    </script>
+  </body>
 </html>
