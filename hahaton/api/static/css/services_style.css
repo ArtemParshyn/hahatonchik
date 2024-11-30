@@ -170,6 +170,8 @@ header{
   background: #f7f7f76d;
 }
 .dopInfo{
+  overflow: scroll;
+  overflow-x: hidden;
   height: 25%;
   width: 100%;
   border-radius: 20px;
