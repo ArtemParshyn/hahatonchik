@@ -1,0 +1,471 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins%3Awght%40100%3B200%3B300%3B400%3B500%3B600&display=swap%27%29%3B');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: boreder-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    scroll-behavior: smoot;
+}
+
+body {
+    width: 100%;
+    height: auto;
+    background: linear-gradient(to right, #fbbbb2, #d1b5ff);
+    overflow-x: hidden;
+}
+
+/*Custom Scroll Bar CSS*/
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-thrumb {
+    background: #b74b4b;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thrumb:hover {
+    background: #b74b4b;
+}
+
+.logo {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #b74b4b;
+    text-shadow: 0 0 10px;
+}
+
+/* Общие стили для меню */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(#6a0dad, #8a2be2);
+    /* Фиолетовый фон меню */
+    padding: 23px 50px;
+}
+
+.nav-container .logo span {
+    color: rgb(230, 61, 61);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-container .links {
+    display: flex;
+    gap: 15px;
+    /* Расстояние между ссылками */
+}
+
+.nav-container .link a {
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    /* Плавный переход для анимации */
+    position: relative;
+    font-size: 1.5rem;
+    /* Увеличенный размер текста */
+    margin-bottom: 20px;
+    /* Больше пространства между пунктами */
+    color: whitesmoke;
+    /* Темный текст для контраста с фоном */
+    font-family: 'Roboto Slab', serif;
+    /* Элегантный шрифт с засечками */
+    position: relative;
+    padding-left: 30px;/
+}
+
+/* Эффект при наведении */
+.nav-container .link a:hover {
+    color: #ff4500;
+    /* Изменение цвета текста на золотистый */
+    transform: scale(1.1);
+    /* Легкое увеличение */
+}
+
+/* Анимация линии под ссылкой при наведении */
+.nav-container .link a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    /* Линия под ссылкой */
+    width: 0%;
+    height: 2px;
+    background-color: #ffd700;
+    /* Золотистая линия */
+    transition: width 0.3s ease;
+    /* Плавное появление линии */
+}
+
+.nav-container .link a:hover::after {
+    width: 100%;
+    /* Линия заполняет всю ширину текста */
+}
+
+/* Эффект при нажатии */
+.nav-container .link a:active {
+    color: #ff4500;
+    /* Цвет меняется на оранжево-красный */
+    transform: scale(0.95);
+    /* Легкое уменьшение кнопки */
+}
+
+/* Скрытое выпадающее меню для мобильных устройств */
+.dropdown {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #6a0dad;
+    padding: 20px;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    z-index: 1000;
+}
+
+/* Показываем выпадающее меню при открытии */
+.dropdown.show {
+    display: flex;
+}
+
+/* Кнопка гамбургера */
+.hamburg,
+.cancel {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+/* Отображение кнопок на мобильных устройствах */
+@media (max-width: 768px) {
+    .hamburg {
+        display: block;
+    }
+
+    .links {
+        display: none;
+    }
+}
+
+
+
+.dropdown {
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    transform: translateY(-300px);
+    width: 100%;
+    height: auto;
+    backdrop-filter: blur(4px) brightness(40%);
+    box-shadow: 0 0 20px black;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a {
+    display: flex;
+    color: white;
+    text-decoration: none;
+    justify-content: center;
+    padding: 15px 0;
+    align-items: center;
+    transition: 0.2s linear;
+}
+
+.dropdown .links a:hover {
+    background-color: #b74b4b;
+}
+
+section {
+    width: 100%;
+    min-height: 90vh;
+}
+
+section.main-container {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 300px;
+    align-items: center;
+}
+
+.main-container .content {
+    margin-top: 800px;
+    /* Отступ сверху для сдвига текста вниз */
+    margin-left: 100px;
+    /* Отступ слева для сдвига текста вправо */
+}
+
+
+.main-container .image img {
+    margin-top: 130px;
+    margin-left: 1220px;
+    /* Сдвигает только картинку вправо на 20px */
+    width: 850px;
+    /* Устанавливаем ширину картинки */
+    height: 600px;
+    /* Устанавливаем высоту картинки */
+}
+
+.main-container .image2 img {
+    margin-top: -300px;
+    margin-left: 1700px;
+    /* Сдвигает только картинку вправо на 20px */
+    width: 100px;
+    /* Устанавливаем ширину картинки */
+    height: 100px;
+    /* Устанавливаем высоту картинки */
+}
+
+.main-container .image3 img {
+    margin-top: -150px;
+    margin-left: 1300px;
+    /* Сдвигает только картинку вправо на 20px */
+    width: 150px;
+    /* Устанавливаем ширину картинки */
+    height: 150px;
+    /* Устанавливаем высоту картинки */
+}
+
+
+
+
+@keyframes animate {
+    0% {
+        scale: 1;
+    }
+
+    50% {
+        scale: 1.05;
+    }
+
+    100% {
+        scale: 1;
+    }
+}
+
+.main-container .content {
+    color: white;
+    width: 40%;
+    text-align: left;
+    /* Выравнивает текст по правому краю */
+    margin-right: 100px;
+    /* Можно добавить отступ справа для эстетики */
+    margin-top: -500px;
+}
+
+.content h1 {
+    font-size: clamp(1rem, 1rem + 5vw, 1.8rem);
+}
+
+.content h1 span {
+    color: #b74b4b;
+    text-shadow: 0 0 10px #b74b4b;
+}
+
+.content p {
+    font-size: clamp(1rem, 1rem + 1vw, 1.3rem);
+}
+
+.content .typewriter {
+    font-size: clamp(1rem, 1rem + 5vm, 2.5rem);
+    font-weight: 600;
+}
+
+.content .typewriter-text {
+    color: #b74b4b;
+    text-shadow: 0 0 10px #b74b4b;
+}
+
+.content p {
+    font-size: clamp(0.4rem, 0, 2rem + 0, 9vw, 1rem);
+    margin: 20px 0;
+    font-size: 1 rem;
+    /* Увеличенный размер текста */
+    margin-bottom: 20px;
+    /* Больше пространства между пунктами */
+    color: whitesmoke;
+    /* Темный текст для контраста с фоном */
+    font-family: 'Roboto Slab', serif;
+    /* Элегантный шрифт с засечками */
+    line-height: 1.8;
+    /* Межстрочный интервал для читаемости */
+    position: relative;
+    /* Больше отступа для удобства */
+    text-shadow: 0px 0px 10px #f1f1f1,
+        0px 0px 10px #f1f1f1,
+        0px 0px 10px #f1f1f1,
+        0px 0px 10px #f1f1f1;
+
+}
+
+/* Общий стиль для кнопки */
+.styled-btn {
+    background: linear-gradient(#6a0dad, #8a2be2);
+    /* Фиолетовый фон */
+    color: white;
+    /* Белый текст */
+    padding: 15px 30px;
+    /* Отступы внутри кнопки */
+    font-size: 16px;
+    /* Размер шрифта */
+    font-weight: bold;
+    /* Жирное начертание */
+    border: none;
+    /* Убираем стандартную рамку */
+    border-radius: 25px;
+    /* Округлые углы */
+    cursor: pointer;
+    /* Курсор в виде руки */
+    transition: all 0.3s ease;
+    /* Плавные переходы для анимаций */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Легкая тень для кнопки */
+}
+
+/* Эффект при наведении */
+.styled-btn:hover {
+    background: linear-gradient(#6a0dad, #5c0099);
+    /* Темный фиолетовый при наведении */
+    transform: scale(1.05);
+    /* Увеличение кнопки при наведении */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    /* Тень увеличивается */
+}
+
+/* Эффект при нажатии */
+.styled-btn:active {
+    background: linear-gradient(#5c0099, #4b0082);
+    /* Еще более темный фиолетовый при нажатии */
+    transform: scale(0.98);
+    /* Немного уменьшаем кнопку */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* Слабая тень при нажатии */
+}
+
+/* About */
+/* Основная структура */
+.about {
+    padding: 50px 20px;
+    background: radial-gradient(circle at 10% 20%, rgb(134, 47, 199) 0%, rgb(235, 56, 137) 90%);
+    ;
+    /* Фиолетовый фон */
+    color: white;
+    /* Белый текст */
+    font-family: 'Roboto', sans-serif;
+    /* Элегантный шрифт */
+}
+
+.about .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about .title span {
+    font-size: 3rem;
+    /* Увеличенный размер заголовка */
+    font-weight: bold;
+    /* Жирный текст */
+    background: linear-gradient(90deg, #1e90ff, #0000ff);
+    /* Синий градиент */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    /* Легкая тень для объема */
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+/* Секция деталей */
+.about .about-details {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Левая часть с изображением */
+.about .about-details .left {
+    flex: 1;
+}
+
+.about .about-details .left img {
+    max-width: 100%;
+    border-radius: 10px;
+    /* Немного скругляем углы изображения */
+}
+
+/* Правая часть с текстом */
+.about .about-details .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Заголовок "Основной функционал" */
+.about .about-details .right .topic {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #1e90ff, #0000ff);
+    /* Синий градиент */
+    -webkit-background-clip: text;
+    /* Применяем градиент к тексту */
+    -webkit-text-fill-color: transparent;
+    /* Делаем текст прозрачным, чтобы показать градиент */
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    /* Красивый шрифт из Google Fonts */
+    margin-bottom: 20px;
+}
+
+/* Список пунктов */
+.about .about-details .right ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about .about-details .right ul li {
+    font-size: 1.5rem;
+    /* Увеличенный размер текста */
+    margin-bottom: 20px;
+    /* Больше пространства между пунктами */
+    color: whitesmoke;
+    text-shadow: 0px 0px 10px #f1f1f1,
+    0px 0px 10px #f1f1f1,
+    0px 0px 10px #f1f1f1,
+    0px 0px 10px #f1f1f1;
+    /* Темный текст для контраста с фоном */
+    font-family: 'Roboto Slab', serif;
+    /* Элегантный шрифт с засечками */
+    line-height: 1.8;
+    /* Межстрочный интервал для читаемости */
+    position: relative;
+    padding-left: 30px;
+    /* Больше отступа для удобства */
+}
+
+/* Индикатор списка */
+.about .about-details .right ul li::before {
+    content: "•";
+    /* Символ для пункта */
+    position: absolute;
+    left: 0;
+    color: #0c73b8;
+    /* Ярко-оранжевый цвет индикатора */
+    font-size: 2rem;
+    /* Индикатор больше, чем текст */
+    line-height: 1;
+}

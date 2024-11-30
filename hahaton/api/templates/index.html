@@ -1,49 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     {% load static %}
-    <meta charset="UTF-8" />
-    <link href="{%static 'css/style.css'%}" rel="stylesheet" />
-    <title>МТС - Главная</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="sidebar" id="sidebar">
-        <button class="close-button" onclick="toggleSidebar()">✖</button>
-        <ul>
-          <li><a href="">Главная</a></li>
-          <li><a href="http://127.0.0.1:8000/services">Поиск сотрудников</a></li>
-          <li><a href="#about">О нас</a></li>
-          <li><a href="#contact">Контакты</a></li>
-        </ul>
-      </div>
-      <div class="main-content">
-        <header>
-          <button class="menu-button" onclick="toggleSidebar()">☰</button>
-          <h1>Добро пожаловать в МТС</h1>
-        </header>
-        <div class="icon">
-          <div>
-            <img
-              class="logo"
-              src="{% static 'images/mts-logo.svg' %}"
-              alt="Логотип"
-            />
-          </div>
-          <section style="opacity: 1">
-            <p>
-              МТС - это ваш надежный партнёр в мире технологий и связи. Мы
-              предоставляем широкий спектр услуг для каждого клиента.
-            </p>
-          </section>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{%static 'css/index.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="{%static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css'}">
+</head>
+
+<body>
+
+    <!--navigation menu-->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <span>МТС</span>
+            </div>
+            <div class="links">
+                <div class="link"><a href="{% url 'index' %}">Главная</a></div>
+                <div class="link"><a href="{% url 'services' %}">Поиск сотрудников</a></div>
+                <div class="link"><a href="{% url 'all_employees' %}">Все сотрудники</a></div>
+                <div class="link"><a href="{% url 'about' %}">О нас</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
         </div>
-      </div>
+    </nav>
+
+<section>
+    <div class="main-container">
+        <div class="image">
+            <img src="{%static 'images/Saly-11.svg'%}" alt="Изображение" width="700" height="500">
+        </div>
+        <div class="image2">
+            <img src="{%static 'images/Saly-20.svg'%}" alt="Изображение" width="700" height="500">
+        </div>
+        <div class="image3">
+            <img src="{%static 'images/Saly-44.svg'%}" alt="Изображение" width="700" height="500">
+        </div>
+        <div class="content">
+            <h1 data-aos="fade-left">
+                Расширенный поиск
+                <span>сотрудников</span>
+            </h1>
+            <p>
+                Это удобный инструмент для визуализации организационной структуры компаний, благодаря которому пользователи могут найти нужных сотрудников, просматривать их положение в иерархии и получать основную информацию о каждом из них. Сервис ориентирован на повышение прозрачности и удобства взаимодействия внутри компании.
+            </p>
+            <div class="btn">
+                <button class="styled-btn">Попробовать</button>
+            </div>
+        </div>
     </div>
-    <script>
-      function toggleSidebar() {
-        const sidebar = document.getElementById("sidebar");
-        sidebar.classList.toggle("active");
-      }
-    </script>
-  </body>
+</section>
+
+
+<!--About Section Start-->
+
+<section class="about"id="about">
+    <div class="content">
+        <div class="title"><span>О нас</span></div>
+        <div class="about-details">
+            <div class="left">
+                <img src="{%static 'images/Saly-10.svg'%}" alt="Изображение" width="700" height="500">
+            </div>
+            <div class="right">
+                <div class="topic">Основной функционал</div>
+                <ul>
+                    <li>Древовидное представление организационной структуры.</li>
+                    <li>Удобная навигация между уровнями и отделами компании.</li>
+                    <li>Интеллектуальный поиск по имени, должности, отделу или ключевым навыкам.</li>
+                    <li>Фильтры для уточнения результатов (например, поиск только в определенном отделе или на должности руководителя).</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+
 </html>
