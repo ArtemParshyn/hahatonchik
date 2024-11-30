@@ -3,42 +3,76 @@
   <head>
     {% load static %}
     <meta charset="UTF-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
     <link href="{%static 'css/services_style.css'%}" rel="stylesheet" />
     <title>Сервис для поиска сотрудников</title>
   </head>
   <body>
     <div class="container">
-      <div class="sidebar" id="sidebar">
-        <button class="close-button" onclick="toggleSidebar()">✖</button>
-        <ul>
-          <li><a href="http://127.0.0.1:8000">Главная</a></li>
-          <li><a href="#services">Поиск сотрудников</a></li>
-          <li><a href="#about">О нас</a></li>
-          <li><a href="#contact">Контакты</a></li>
-        </ul>
-      </div>
-      <div class="main-content">
-        <header>
-          <button class="menu-button" onclick="toggleSidebar()">☰</button>
-        </header>
-        <div class="founder">
-          <section class="founder-menu">
-            <button type="submit" class="search-button">Поиск</button>
-          </section>
-          <section class="founder-person">
-            <div class="person-photo">
-              <img src="{% static 'images/photo.jpg' %}" />
-            </div>
-            <div class="person-info"></div>
-          </section>
+        <div class="sidebar" id="sidebar">
+          <button class="close-button" onclick="toggleSidebar()">✖</button>
+          <ul>
+            <li><a href="http://127.0.0.1:8000">Главная</a></li>
+            <li><a href="#services">Поиск сотрудников</a></li>
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#contact">Контакты</a></li>
+          </ul>
         </div>
-      </div>
+        <div class="main-content">
+            <header>
+              <button class="menu-button" onclick="toggleSidebar()">☰</button>
+              <img
+                class="logo"
+                src="{% static 'images/mts-logo.svg' %}"
+                alt="Логотип"
+              />
+            </header>
+            <div class="founder">
+                <section class="founder-menu">
+                    <button type="submit" class="search-button">Поиск</button>
+                    <div>
+                      <input placeholder="ФИО" tabindex="1" name="ФИО" type="text">
+                    </div>
+                    <div>
+                      <input placeholder="Стаж" tabindex="2" name="Стаж" type="text">
+                    </div>
+                    <div>
+                      <input placeholder="Должность" tabindex="3" name="Должность" type="text">
+                    </div>
+                    <div>
+                      <input placeholder="Номер телефона" tabindex="4" name="Номер телефона" type="text">
+                    </div>
+                    <div>
+                      <input placeholder="Почта" tabindex="5" name="Почта" type="text">
+                    </div>
+                    <div>
+                      <input placeholder="Департамент" tabindex="5" name="Департамент" type="text">
+                    </div>
+                </section>
+                <div class="founder-person">
+                    <div class="Person">
+                          <img src="{% static 'images/avatar.jpg' %}" alt="Аватарка пользователя"/>
+                          <div class="maininfo">
+                            <p>ФИО: </p>
+                            <p>Стаж: </p>
+                            <p>Должность: </p>
+                            <p>Номер телефона: </p>
+                            <p>Почта: </p>
+                            <p>Департамент:</p>
+                          </div>
+                    </div>
+                    <div class="dopInfo">
+                    </div>
+
+                </div>
+              </div>
+        </div>
     </div>
     <script>
-      function toggleSidebar() {
-        const sidebar = document.getElementById("sidebar");
-        sidebar.classList.toggle("active");
-      }
-    </script>
+        function toggleSidebar() {
+          const sidebar = document.getElementById("sidebar");
+          sidebar.classList.toggle("active");
+        }
+      </script>
   </body>
 </html>

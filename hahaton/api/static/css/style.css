@@ -95,6 +95,9 @@ section p {
   font-size: 18px;
   line-height: 1.6;
 }
+input{
+  border-radius: 20px;
+}
 
 /* Анимация при выезде */
 .sidebar.active {
