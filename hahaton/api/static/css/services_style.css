@@ -4,86 +4,105 @@
 }
 
 body {
-  background: linear-gradient(to bottom right, #fbbbb2, #d1b5ff);
+  margin: 0px;
+  background: linear-gradient(to right, #fbbbb2, #d1b5ff);
   font-family: "Arial", sans-serif;
   color: #333;
   height: 100vh;
 }
-header{
-  display: flex;
-  justify-content: space-between;
+.main-content{
+  padding: 20px;
+  height: 100vh;
 }
-
 .container {
   display: flex;
   flex-direction: row;
   height: 100vh;
 }
-
-/* Боковая панель */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: -300px;
-  width: 260px;
-  height: 100%;
-  background: #ff4d4f;
-  color: #fff;
-  padding: 20px;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
-  transition: left 0.4s ease;
-  z-index: 1000;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar ul li {
-  margin: 20px 0;
-}
-
-.sidebar ul li a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 18px;
-  transition: color 0.3s ease;
-}
-
-.sidebar ul li a:hover {
-  color: #ffd1d1;
-}
-
-.close-button {
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 24px;
-  cursor: pointer;
-  margin-left: auto;
-  display: block;
-}
-
-.sidebar.active {
-  left: 0;
-}
-
-/* Основное содержимое */
-.main-content {
-  flex: 1;
-  padding: 20px;
+.nav-container {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(#6a0dad, #8a2be2);
+  /* Фиолетовый фон меню */
+  padding: 23px 50px;
 }
 
-.menu-button {
-  background: none;
-  border: none;
-  font-size: 28px;
-  cursor: pointer;
-  color: #ff4d4f;
+.nav-container .logo span {
+  color: rgb(230, 61, 61);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-container .links {
+  display: flex;
+
+  gap: 15px;
+  /* Расстояние между ссылками */
+}
+
+.nav-container .link a {
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  /* Плавный переход для анимации */
+  position: relative;
+  font-size: 1.5rem;
+  /* Увеличенный размер текста */
+  margin-bottom: 20px;
+  /* Больше пространства между пунктами */
+  color: whitesmoke;
+  /* Темный текст для контраста с фоном */
+  font-family: 'Roboto Slab', serif;
+  /* Элегантный шрифт с засечками */
+  position: relative;
+  padding-left: 30px;/
+}
+
+/* Эффект при наведении */
+.nav-container .link a:hover {
+  color: #ff4500;
+  /* Изменение цвета текста на золотистый */
+  transform: scale(1.1);
+  /* Легкое увеличение */
+}
+
+/* Анимация линии под ссылкой при наведении */
+.nav-container .link a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  /* Линия под ссылкой */
+  width: 0%;
+  height: 2px;
+  background-color: #ffd700;
+  /* Золотистая линия */
+  transition: width 0.3s ease;
+  /* Плавное появление линии */
+}
+
+.nav-container .link a:hover::after {
+  width: 100%;
+  /* Линия заполняет всю ширину текста */
+}
+
+/* Эффект при нажатии */
+.nav-container .link a:active {
+  color: #ff4500;
+  /* Цвет меняется на оранжево-красный */
+  transform: scale(0.95);
+  /* Легкое уменьшение кнопки */
+}
+.logo {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #b74b4b;
+  text-shadow: 0 0 10px;
 }
 
 /* Поисковик */
@@ -105,6 +124,7 @@ header{
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* Тень */
 }
 .founder-menu *{
+  border-bottom: black;
   padding: 10px;
   border: none; /* Удаляет обводку */
   border-radius: 20px;
@@ -164,10 +184,13 @@ header{
   border-radius: 20px;
 }
 .maininfo{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100%;
   width: 50%;
   border-radius: 20px;
-  background: #f7f7f76d;
+  background: #f7f7f700;
 }
 .dopInfo{
   overflow: scroll;
@@ -175,14 +198,19 @@ header{
   height: 25%;
   width: 100%;
   border-radius: 20px;
-  background: #fffefe6d;
+  background: #f7f7f724;
 }
 
 .maininfo p{
-  padding: 10px;
+  padding: 10px 20px;
+  margin: 0px;
   text-decoration: none;
   color: black;
   font-size: 18px;
+}
+.maininfo section {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
 }
 
 .logo {
