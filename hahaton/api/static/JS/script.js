@@ -19,14 +19,35 @@ document.addEventListener("DOMContentLoaded", function () {
       department: DEPARTMENT.value,
       project: PROJECT.value,
     };
-    console.log("data");
+    console.log(data);
     fetch("/search_page", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json",},
       body: JSON.stringify(data),
     })
       .then((response) => response.json())
       .then((result) => {
+        employees = result.employees;
+        const employeesContainer = document.getElementById("employees-container");
+
+        employeesContainer.innerHTML = "";
+
+            // Создаем и добавляем сотрудников в контейнер
+        employees.forEach((employee) => {
+    const employeeDiv = document.createElement("div");
+    employeeDiv.className = "employee-card";
+
+    employeeDiv.innerHTML = `
+      <p><strong>ФИО:</strong> ${employee.fio}</p>
+      <p><strong>Возраст:</strong> ${employee.age}</p>
+      <button class="fetch-details" data-id="${employee.id}">Подробнее</button>
+      <div class="details" id="details-${employee.id}" style="display: none;">
+        <p>Загрузка данных...</p>
+      </div>
+    `;
+
+    employeesContainer.appendChild(employeeDiv);
+  });
         console.log("Успех:", result);
       })
       .catch((error) => {

@@ -4,15 +4,16 @@
 <head>
     {% load static %}
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>МТС - Расширенный поиск сотрудников</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{%static 'css/index.css'%}" rel="stylesheet">
-    <link rel="stylesheet" href="{%static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css'}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
 
-    <!--navigation menu-->
+    <!-- Navigation Menu -->
     <nav>
         <div class="nav-container">
             <div class="logo">
@@ -28,54 +29,54 @@
         </div>
     </nav>
 
-<section>
-    <div class="main-container">
-        <div class="image">
-            <img src="{%static 'images/Saly-11.svg'%}" alt="Изображение" width="700" height="500">
+    <!-- Main Section -->
+    <section>
+        <div class="main-container">
+            <div class="image">
+                <img src="{% static 'images/Saly-11.svg' %}" alt="Изображение" width="700" height="500">
+            </div>
+            <div class="content">
+                <h1 data-aos="fade-left">
+                    Расширенный поиск
+                    <span>сотрудников</span>
+                </h1>
+                <p>
+                    Это удобный инструмент для визуализации организационной структуры компаний, благодаря которому пользователи могут найти нужных сотрудников, просматривать их положение в иерархии и получать основную информацию о каждом из них.
+                </p>
+                <div class="btn">
+                    <button class="styled-btn">Попробовать</button>
+                </div>
+            </div>
         </div>
-        <div class="image2">
-            <img src="{%static 'images/Saly-20.svg'%}" alt="Изображение" width="700" height="500">
-        </div>
-        <div class="image3">
-            <img src="{%static 'images/Saly-44.svg'%}" alt="Изображение" width="700" height="500">
-        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
         <div class="content">
-            <h1 data-aos="fade-left">
-                Расширенный поиск
-                <span>сотрудников</span>
-            </h1>
-            <p>
-                Это удобный инструмент для визуализации организационной структуры компаний, благодаря которому пользователи могут найти нужных сотрудников, просматривать их положение в иерархии и получать основную информацию о каждом из них. Сервис ориентирован на повышение прозрачности и удобства взаимодействия внутри компании.
-            </p>
-            <div class="btn">
-                <button class="styled-btn">Попробовать</button>
+            <div class="title"><span>О нас</span></div>
+            <div class="about-details">
+                <div class="left">
+                    <img src="{% static 'images/Saly-10.svg' %}" alt="Изображение" width="700" height="500">
+                </div>
+                <div class="right">
+                    <div class="topic">Основной функционал</div>
+                    <ul>
+                        <li>Древовидное представление организационной структуры.</li>
+                        <li>Удобная навигация между уровнями и отделами компании.</li>
+                        <li>Интеллектуальный поиск по имени, должности, отделу или ключевым навыкам.</li>
+                        <li>Фильтры для уточнения результатов.</li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
+    <script>
+        function hamburg() {
+            document.querySelector('.links').classList.toggle('show');
+        }
+    </script>
 
-<!--About Section Start-->
-
-<section class="about"id="about">
-    <div class="content">
-        <div class="title"><span>О нас</span></div>
-        <div class="about-details">
-            <div class="left">
-                <img src="{%static 'images/Saly-10.svg'%}" alt="Изображение" width="700" height="500">
-            </div>
-            <div class="right">
-                <div class="topic">Основной функционал</div>
-                <ul>
-                    <li>Древовидное представление организационной структуры.</li>
-                    <li>Удобная навигация между уровнями и отделами компании.</li>
-                    <li>Интеллектуальный поиск по имени, должности, отделу или ключевым навыкам.</li>
-                    <li>Фильтры для уточнения результатов (например, поиск только в определенном отделе или на должности руководителя).</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
 </body>
 
 </html>

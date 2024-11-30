@@ -45,7 +45,7 @@
             // Генерация опций от 1 до 50 лет
             for (let i = 1; i <= 50; i++) {
               const option = document.createElement("option");
-              option.value = `${i}years`; // Устанавливаем значение
+              option.value = i; // Устанавливаем значение
               option.textContent = i === 1 ? "1 год" : `${i} лет`; // Текстовая метка (отдельный случай для "1 год")
               experienceSelect.appendChild(option); // Добавляем опцию к селекту
             }
@@ -54,15 +54,18 @@
           <form>
             <select name="Post" id="Post">
               <option value="0">-- Выберите Должность --</option>
-              {% for i in dolzhns%}
-
-              <option value="{{i}}">{{i}}</option>
+              {% for i in dolzhns %}
+              <option value="{{i.position}}">{{i.position}}</option>
               {% endfor %}
             </select>
           </form>
           <form>
             <select name="Department" id="Department">
               <option value="0">-- Выберите Департамент --</option>
+              {% for i in departs %}
+                <option value="{{i.fio}}">{{i.fio}}</option>
+              {% endfor %}
+
             </select>
           </form>
           <form>
@@ -85,20 +88,22 @@
           <form>
             <select name="project" id="project">
               <option value="0">-- Выберите Проект --</option>
-              {% for i in project%}
-
-              <option value="{{i}}">{{i}}</option>
+              {% for i in projects %}
+                <option value = {{i.name}}>{{i.name}}</option>
               {% endfor %}
             </select>
           </form>
+          <div id="employees-container"></div> <!-- Контейнер для сотрудников -->
+
         </section>
         <div class="founder-person">
           <div class="Person">
-            <div class="person-photo">
-              <img
+            <img
                 src="{% static 'images/avatar.jpg' %}"
                 alt="Аватарка пользователя"
               />
+            <div class="person-photo">
+
             </div>
             <div class="maininfo">
               <section><p>ФИО:</p></section>

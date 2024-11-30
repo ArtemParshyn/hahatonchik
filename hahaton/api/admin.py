@@ -16,7 +16,6 @@ class EmployeeAdmin(admin.ModelAdmin):
         'position',
         'number',
         'mail',
-
         'salary',
         'age',
         'city',

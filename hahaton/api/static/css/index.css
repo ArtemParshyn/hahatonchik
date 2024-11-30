@@ -209,15 +209,17 @@ section.main-container {
 
 
 .main-container .image img {
-    margin-top: 130px;
-    margin-left: 1220px;
     /* Сдвигает только картинку вправо на 20px */
     width: 850px;
     /* Устанавливаем ширину картинки */
     height: 600px;
     /* Устанавливаем высоту картинки */
 }
+.image{
+    margin-top: 130px;
 
+    margin-left: 700px;
+}
 .main-container .image2 img {
     margin-top: -300px;
     margin-left: 1700px;
