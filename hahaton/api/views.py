@@ -1,7 +1,6 @@
-import json
-
 from django.shortcuts import render
 
+# Главная страница
 from api.models import Employee
 
 
@@ -29,3 +28,15 @@ def search_page(request):
     return JsonResponse({"employees": fgkjldfhipgpsdfjghp})
 
 
+
+# Страница поиска сотрудников
+def services(request):
+    return render(request, 'services.html')
+
+# Страница со списком всех сотрудников
+def all_employees(request):
+    return render(request, 'all_employees.html')
+
+# Страница "О нас"
+def about(request):
+    return render(request, 'about.html')
