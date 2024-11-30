@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <link href="{%static 'css/services_style.css'%}" rel="stylesheet" />
+    <title>Сервис для поиска сотрудников</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar" id="sidebar">
+        <button class="close-button" onclick="toggleSidebar()">✖</button>
+        <ul>
+          <li><a href="http://127.0.0.1:8000">Главная</a></li>
+          <li><a href="#services">Поиск сотрудников</a></li>
+          <li><a href="#about">О нас</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="main-content">
+        <header>
+          <button class="menu-button" onclick="toggleSidebar()">☰</button>
+        </header>
+        <div class="founder">
+          <section class="founder-menu">
+            <button type="submit" class="search-button">Поиск</button>
+          </section>
+          <section class="founder-person">
+            <div class="person-photo">
+              <img src="{% static 'images/photo.jpg' %}" />
+            </div>
+            <div class="person-info"></div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <script>
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>
