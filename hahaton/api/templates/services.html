@@ -4,7 +4,7 @@
     {% load static %}
     <meta charset="UTF-8" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link href="{%static 'css/services_style.css'%}" rel="stylesheet" />
@@ -12,24 +12,25 @@
     <title>Сервис для поиска сотрудников</title>
   </head>
   <body>
-    <nav>
-      <div class="nav-container">
-        <div class="logo">
-          <span>МТС</span>
-        </div>
-        <div class="links">
-          <div class="link"><a href="{% url 'index' %}">Главная</a></div>
-          <div class="link">
-            <a href="{% url 'services' %}">Поиск сотрудников</a>
-          </div>
-          <div class="link">
-            <a href="{% url 'all_employees' %}">Все сотрудники</a>
-          </div>
-          <div class="link"><a href="{% url 'about' %}">О нас</a></div>
-        </div>
-      </div>
-    </nav>
+    
     <div class="main-content">
+      <nav>
+        <div class="nav-container">
+          <div class="logo">
+            <span>МТС</span>
+          </div>
+          <div class="links">
+            <div class="link"><a href="{% url 'index' %}">Главная</a></div>
+            <div class="link">
+              <a href="{% url 'services' %}">Поиск сотрудников</a>
+            </div>
+            <div class="link">
+              <a href="{% url 'all_employees' %}">Все сотрудники</a>
+            </div>
+            <div class="link"><a href="{% url 'about' %}">О нас</a></div>
+          </div>
+        </div>
+      </nav>
       <div class="founder">
         <section class="founder-menu">
           <button id="Button" type="submit" class="search-button">Поиск</button>
