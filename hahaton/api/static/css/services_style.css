@@ -1,0 +1,197 @@
+/* Общие настройки */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to right, #f7f7f7, #ffffff);
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Навигация */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #6a0dad;
+  padding: 15px 50px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+}
+
+.logo span {
+  color: #ffd700;
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+}
+
+.link a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: white;
+  transition: all 0.3s;
+}
+
+.link a:hover {
+  color: #ffd700;
+  transform: scale(1.1);
+}
+
+/* Основной контент */
+.main-content {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 20px;
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+}
+
+/* Блок поиска сотрудников */
+.founder-menu {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.founder-menu form,
+.founder-menu button {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.founder-menu select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  background: #f7f7f7;
+  transition: border 0.3s;
+}
+
+.founder-menu select:focus {
+  border-color: #6a0dad;
+}
+
+.search-button {
+  background: #6a0dad;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.search-button:hover {
+  background: #8a2be2;
+}
+
+/* Карточки сотрудников */
+#employees-container {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  height: 300px;
+  overflow-y: auto;
+}
+
+/* Информация о сотруднике */
+.founder-person {
+  background: white;
+  flex: 1;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.Person {
+  display: flex;
+  align-items: flex-start;
+}
+
+.person-photo {
+  width: 120px;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+img {
+  width: 120px;
+  height: auto;
+}
+
+.maininfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.maininfo section {
+  background: #f7f7f7;
+  padding: 10px 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: calc(50% - 10px);
+}
+
+.maininfo section p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #555;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .founder-menu,
+  .founder-person {
+    width: 100%;
+  }
+
+  .maininfo section {
+    width: 100%;
+  }
+}
+
+.founder {
+  display: flex;
+  gap: 20px; /* Расстояние между колонками */
+}
+
+.founder-menu {
+  flex: 1; /* Устанавливает ширину: 35% */
+  max-width: 35%;
+}
+
+.founder-person {
+  flex: 2; /* Устанавливает ширину: оставшаяся часть */
+}

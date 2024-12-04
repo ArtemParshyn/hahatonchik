@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link href="{%static 'css/services_style.css'%}" rel="stylesheet" />
+
+    <title>Сервис для поиска сотрудников</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <div class="logo">
+          <span>МТС</span>
+        </div>
+        <div class="links">
+          <div class="link"><a href="{% url 'index' %}">Главная</a></div>
+          <div class="link">
+            <a href="{% url 'services' %}">Поиск сотрудников</a>
+          </div>
+          <div class="link">
+            <a href="{% url 'all_employees' %}">Все сотрудники</a>
+          </div>
+          <div class="link"><a href="{% url 'about' %}">О нас</a></div>
+        </div>
+      </div>
+    </nav>
+    <div class="main-content">
+      <div class="founder">
+        <section class="founder-menu">
+          <button id="Button" type="submit" class="search-button">Поиск</button>
+          <form>
+            <select name="experience" id="experience">
+              <option value="0">-- Выберите стаж --</option>
+              <option value="0">меньше 1</option>
+            </select>
+          </form>
+          <script>
+            const experienceSelect = document.getElementById("experience");
+
+            // Генерация опций от 1 до 50 лет
+            for (let i = 1; i <= 50; i++) {
+              const option = document.createElement("option");
+              option.value = i; // Устанавливаем значение
+              option.textContent = i === 1 ? "1 год" : `${i} лет`; // Текстовая метка (отдельный случай для "1 год")
+              experienceSelect.appendChild(option); // Добавляем опцию к селекту
+            }
+          </script>
+
+          <form>
+            <select name="Post" id="Post">
+              <option value="0">-- Выберите Должность --</option>
+              {% for i in dolzhns %}
+              <option value="{{i.position}}">{{i.position}}</option>
+              {% endfor %}
+            </select>
+          </form>
+          <form>
+            <select name="Department" id="Department">
+              <option value="0">-- Выберите Департамент --</option>
+              {% for i in departs %}
+                <option value="{{i.fio}}">{{i.fio}}</option>
+              {% endfor %}
+
+            </select>
+          </form>
+          <form>
+            <select name="Salary" id="Salary">
+              <option value="0">-- Выберите Зарплату --</option>
+            </select>
+          </form>
+
+          <script>
+            const salarySelect = document.getElementById("Salary");
+
+            // Генерация опций от 10,000 до 200,000 с шагом 10,000
+            for (let salary = 10000; salary <= 200000; salary += 1000) {
+              const option = document.createElement("option"); // Создаем новый элемент option
+              option.value = salary; // Устанавливаем значение для option
+              option.textContent = `${salary.toLocaleString()} руб.`; // Форматируем и устанавливаем текст (добавляем разделители тысяч и валюту)
+              salarySelect.appendChild(option); // Добавляем option в select
+            }
+          </script>
+          <form>
+            <select name="project" id="project">
+              <option value="0">-- Выберите Проект --</option>
+              {% for i in projects %}
+                <option value = {{i.name}}>{{i.name}}</option>
+              {% endfor %}
+            </select>
+          </form>
+          <div id="employees-container"></div> <!-- Контейнер для сотрудников -->
+
+        </section>
+        <div class="founder-person">
+          <div class="Person">
+            <img
+                src="{% static 'images/avatar.jpg' %}"
+                alt="Аватарка пользователя"
+              />
+            <div class="person-photo">
+
+            </div>
+            <div class="maininfo">
+              <section><p>ФИО:</p></section>
+              <section><p>Стаж:</p></section>
+              <section><p>Должность:</p></section>
+              <section><p>Номер телефона:</p></section>
+              <section><p>Почта:</p></section>
+              <section><p>Департамент:</p></section>
+              <section><p>Зарплата:</p></section>
+              <section><p>Проект:</p></section>
+              <section><p>Город:</p></section>
+              <section><p>Дата рождения:</p></section>
+            </div>
+          </div>
+          <div class="dopInfo"></div>
+        </div>
+      </div>
+    </div>
+    <script src="{%static 'JS/script.js'%}" defer>
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>
